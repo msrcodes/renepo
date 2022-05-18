@@ -1,19 +1,25 @@
+/* eslint-disable node/no-unsupported-features/es-builtins */
 import {Option, program} from 'commander';
-import {getBrowsers} from './browser';
+import {getBrowserList, getBrowserMap} from './browser';
 
 interface Opts {
   browsers: string[];
 }
 
-export const getOpts = () => {
-  const browserList = getBrowsers();
+const parseBrowsers = (browsers: string) => {
+  const browserList = getBrowserList();
+  const browserMap = getBrowserMap();
+  return browsers
+    .split(',')
+    .filter(browser => browserList.includes(browser))
+    .map(browser => browserMap[browser]);
+};
 
+export const getOpts = () => {
   program.addOption(
     new Option('-b,--browsers [...browsers]')
       .makeOptionMandatory()
-      .argParser(browsers =>
-        browsers.split(',').filter(browser => browserList.includes(browser))
-      )
+      .argParser(browsers => parseBrowsers(browsers))
   );
 
   program.parse();
