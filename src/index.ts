@@ -1,12 +1,19 @@
 #! /usr/bin/env node
 import open = require('open');
-import {getOpts} from './cli';
+import {getCliInput} from './cli';
 
-const testUrl = 'https://msr.codes';
-
-const {browsers} = getOpts();
+const {
+  opts: {browsers},
+  args,
+} = getCliInput();
 
 for (const browser of browsers) {
-  console.log(`Opening in ${browser}`);
-  open(testUrl, {app: {name: browser}, wait: false, newInstance: true});
+  const [url] = args;
+  open(url, {
+    app: {
+      name: browser,
+    },
+    wait: false,
+    newInstance: true,
+  });
 }

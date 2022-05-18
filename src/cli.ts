@@ -1,5 +1,5 @@
 /* eslint-disable node/no-unsupported-features/es-builtins */
-import {Option, program} from 'commander';
+import {Argument, Option, program} from 'commander';
 import {getBrowserList, getBrowserMap} from './browser';
 
 interface Opts {
@@ -15,14 +15,16 @@ const parseBrowsers = (browsers: string) => {
     .map(browser => browserMap[browser]);
 };
 
-export const getOpts = () => {
+export const getCliInput = () => {
+  program.addArgument(new Argument('<url>', 'URL to open'));
+
   program.addOption(
-    new Option('-b,--browsers [...browsers]')
+    new Option('-b, --browsers [...browsers]')
       .makeOptionMandatory()
       .argParser(browsers => parseBrowsers(browsers))
   );
 
   program.parse();
 
-  return program.opts<Opts>();
+  return {opts: program.opts<Opts>(), args: program.args};
 };
