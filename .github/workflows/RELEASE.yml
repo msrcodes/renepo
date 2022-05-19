@@ -2,7 +2,7 @@ name: ✨ Release
 on:
   push:
     branches:
-      - none
+      - main
 
 jobs:
   release:
