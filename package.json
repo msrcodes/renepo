@@ -1,7 +1,7 @@
 {
   "name": "renepo",
   "version": "0.0.0",
-  "description": "",
+  "description": "Renepo allows you to open a URL in multiple browsers at the same time using the command line. Super helpful for during web development when you need to open a site in multiple browsers for testing.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {
@@ -13,7 +13,7 @@
   "repository": "git@github.com:msrcodes/renepo.git",
   "author": "Mikael Rozee <mikaelsrozee@gmail.com> (https://msr.codes/)",
   "license": "MIT",
-  "keywords": [],
+  "keywords": ["open", "window", "opener", "browser", "testing", "development", "web", "debugging"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "gts lint",
