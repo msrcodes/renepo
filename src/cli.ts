@@ -1,10 +1,7 @@
 /* eslint-disable node/no-unsupported-features/es-builtins */
 import {Argument, Option, program} from 'commander';
 import {getBrowserList, getBrowserMap} from './browser';
-
-interface Opts {
-  browsers: string[];
-}
+import type {Opts} from './types';
 
 const parseBrowsers = (browsers: string) => {
   const browserList = getBrowserList();
