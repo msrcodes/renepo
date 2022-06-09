@@ -8,12 +8,21 @@
     "renepo": "build/index.js"
   },
   "bugs": {
-      "url": "https://github.com/msrcodes/renepo/issues"
+    "url": "https://github.com/msrcodes/renepo/issues"
   },
   "repository": "git@github.com:msrcodes/renepo.git",
   "author": "Mikael Rozee <mikaelsrozee@gmail.com> (https://msr.codes/)",
   "license": "MIT",
-  "keywords": ["open", "window", "opener", "browser", "testing", "development", "web", "debugging"],
+  "keywords": [
+    "open",
+    "window",
+    "opener",
+    "browser",
+    "testing",
+    "development",
+    "web",
+    "debugging"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "gts lint",
@@ -32,6 +41,7 @@
     "@commitlint/config-angular": "^17.0.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
+    "@types/debug": "^4.1.7",
     "@types/node": "^14.11.2",
     "gts": "^3.1.0",
     "husky": "^8.0.1",
@@ -42,6 +52,7 @@
   "dependencies": {
     "chalk": "^5.0.1",
     "commander": "^9.2.0",
+    "debug": "^4.3.4",
     "open": "^8.4.0"
   }
 }

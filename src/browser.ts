@@ -2,6 +2,8 @@
 import {apps} from 'open';
 import {platform} from 'os';
 
+import type {Browser} from './types';
+
 export const isMac = platform() === 'darwin';
 
 export const getBrowserMap = () => {
@@ -22,4 +24,11 @@ export const getBrowserList = (): string[] => {
   }
 
   return browsers;
+};
+
+export const getMacBrowser = (browser: Browser) => {
+  const browserLookup: Partial<Record<Browser, string>> = {
+    'google chrome': 'Google Chrome',
+  };
+  return browserLookup[browser] ?? browser;
 };
