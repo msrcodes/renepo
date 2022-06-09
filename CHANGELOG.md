@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/msrcodes/renepo/compare/v1.0.0...v1.1.0) (2022-06-09)
+
+
+### Features
+
+* use same chrome window size ([3a4a79b](https://github.com/msrcodes/renepo/commit/3a4a79b0b6622776e1727068241ba51bdf9d2990))
+
 # 1.0.0 (2022-05-19)
 
 
